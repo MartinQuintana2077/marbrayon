@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marbrayon.com</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/Css.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+</head>
+<style>
+  /* Estilo personalizado para el carrusel */
+  .carousel-item img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+<body id="telefono">
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-wrapper" style="background: #17202A;">
+     
+      <a href="#" class="brand-logo center" style="color: #ffffff;"><img style="border-radius:60px" src="Ima/logochico.jpg" width="150" height="65" alt="logochico"/></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+        </li>
+        <li><a href="/logout">Cerrar sesión</a></li>
+        <li><a href="inicio">Cambiar usuario</a></li>
+        <li> <a style="background: linear-gradient(to bottom, #17202A, #34495E);" href="carrito" class="btn-floating pulse"><i class="material-icons">add_shopping_cart</i></a></li>
+        <li> <a style="background: linear-gradient(to bottom, #17202A, #34495E);" href="mis-compras" class="btn-floating pulse"><i class="material-icons">shop</i></a></li>
+        <li> <a style="background: linear-gradient(to bottom, #17202A, #34495E);" href="favoritos" class="btn-floating pulse"><i class="material-icons">favorite</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img style="height: 260px; width: 300px;" src="Ima/fondo11.png">
+            </div>
+            <a href="#user"><img class="circle" src="Ima/marti.png"></a>
+            <a href="#name"><span class="white-text name"><%= user.nombre_usuario %></span></a>
+            <a href="#email"><span class="white-text email"><%= user.email_usuario %></span></a>
+        </div>
+    </li>
+    <li><a href="#!"><i class="material-icons">cloud</i>Mi Usuario</a></li>
+    <li><a href="/logout">Cerrar sesión</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader" href="inicio">Cambiar Usuario</a></li>
+    <li><a class="waves-effect" href="index">Volver Inicio</a></li>
+    <li><a class="waves-effect" href="carrito">Ver mi carrito</a></li>
+    <li><a class="waves-effect" href="mis-compras">Ver mis compras</a></li>
+    <li><a class="waves-effect" href="favoritos">Favoritos</a></li>
+    
+</ul>
+
+
+  
+
+  <!-- Carrusel de imágenes -->
+  <div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!"><img src="Ima/juventus.png" width="100%" height="auto"/></a>
+    <a class="carousel-item" href="#five!"><img src="Ima/bbva.png" width="100%" height="auto"/></a>
+    <a class="carousel-item" href="#six!"><img src="Ima/brazil.png" width="100%" height="auto"/></a>
+  </div>
+
+  <div style="text-align: center;">
+    <img style="margin-bottom: 1%;" src="Ima/covver.png" width="10%" height="auto">
+    <img style="margin-bottom: 2%;" src="Ima/levis.png" width="10%" height="auto">
+    <img src="Ima/lacoste.png" width="9%" height="auto">
+    <img src="Ima/di.png" width="9%" height="auto">
+    <img src="Ima/nike.png" width="9%" height="auto">
+    <img src="Ima/under.png" width="9%" height="auto">
+  </div>
+
+
+
+              
+<!-- YA QUE NO PUDE AGRANDARLO MEJOR CREEE 2 PARA TENER MAS PRODUCTOS -->
+<table border="1">
+    <thead>
+        <tr>
+            <th style="font-family: initial">  <div  class="carousel" id="1">
+                    <a class="carousel-item" href="#one!" style="color: #34495E;"><img src="Ima/otra.png"><div>Camiseta de Espana 2018 </div><div>descripcion</div><div >PRECIO: 19.999</div><div>Envio gratis a todo chile</div> </a>
+                    
+                <a class="carousel-item" href="#two!" style="color: #34495E;"><img src="Ima/bayer.png"><div>Camiseta Bayer Munich 2024 </div><div>descripcion</div><div> PRECIO: 19.999</div><div>Envio gratis a todo chile</div></a>
+                <a class="carousel-item" href="#three!" style="color: #34495E;"><img src="Ima/2.png"><div>Camiseta de Inter 2024 </div><div>descripcion</div><div> >PRECIO: 19.999</div><div>Envio gratis a todo chile</div></a>
+                <a class="carousel-item" href="#four!" style="color: #34495E;"><img src="Ima/3.png"><div>Camiseta de Brasil 2014 </div><div>descripcion</div><div>PRECIO: 19.999</div><div>Envio gratis a todo chile</div></a>
+                <a class="carousel-item" href="#five!" style="color: #34495E;"><img src="Ima/4.png"><div>Camiseta de Brasil 2024 </div><div>descripcion</div><div>PRECIO: 19.999</div><div>Envio gratis a todo chile</div></a>
+                <a class="carousel-item" href="#five!" style="color: #34495E;"><img src="Ima/5.png"><div>Camiseta de Espana 2024 </div><div>descripcion</div><div>PRECIO: 59.999</div><div>Envio gratis a todo chile</div></a>
+              </div></th>
+            <th style="font-family: initial">  
+                <div  class="carousel" id="2">
+                    <a class="carousel-item" href="#one!" style="color: #34495E;"><img src="Ima/basque1.png"><div>Camiseta de PSG  </div><div>descripcion</div><div>PRECIO: 67.999</div><div>Envio gratis a todo chile</div> </a>
+                    <a class="carousel-item" href="#two!" style="color: #34495E;"><img src="Ima/basque5.png"><div>Camiseta Dallas 2024 </div><div>descripcion</div><div>PRECIO: 29.999</div><div>Envio gratis a todo chile</div></a>
+                    <a class="carousel-item" href="#three!" style="color: #34495E;"><img src="Ima/basque9.png"><div>Camiseta Brooklyn </div><div>descripcion</div><div>PRECIO: 38.999</div><div>Envio gratis a todo chile</div></a>
+                    <a class="carousel-item" href="#four!" style="color: #34495E;"><img src="Ima/basque7.png"><div>Camiseta Celtics </div><div>descripcion</div><div>PRECIO: 19.999</div><div>Envio gratis a todo chile</div></a>
+                    <a class="carousel-item" href="#five!" style="color: #34495E;"><img src="Ima/basque4.png"><div>Camiseta de Brooklyn 2024 </div><div>descripcion</div><div >PRECIO: 44.999</div><div>Envio gratis a todo chile</div></a>
+                    <a class="carousel-item" href="#five!" style="color: #34495E;"><img src="Ima/basque6.png"><div>Camiseta Chicago BULLS </div><div>descripcion</div><div>PRECIO: 59.999</div><div>Envio gratis a todo chile</div></a>
+              </div></th>
+        </tr>
+    </thead>
+</table>
+<br>
+<br>
+<br>
+
+</div>
+<div class="parallax-container">
+  <div class="parallax"><img src="Ima/futbolrol.jpg"></div>
+</div>
+<br>
+<br>
+<br>
+  <!-- Título de productos más vendidos -->
+  <div style="font-size: 60px; color:#17202A; text-align: center;">Productos más vendidos</div>
+
+<br>
+<br>
+<br>
+
+
+
+
+
+<style>
+  .card {
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+
+<!-- Fila 1 -->
+<div class="row">
+  <!-- Producto 1 -->
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-image">
+        <img src="Ima/2.png">
+        <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">90% de descuento</span>
+      </div>
+      <div class="card-content">
+        <p>Nombre: Camiseta del Inter de Milán 2024</p>
+        <p>Precio: $19.999</p>
+        <p>Equipo: Inter de Milán</p>
+      </div>
+      <div class="card-action">
+        <form method="POST" action="/carrito/agregar">
+          <input type="hidden" name="id_producto" value="1">
+          <p>Seleccione la cantidad:</p>
+          <input type="number" name="cantidad" min="1" required>
+          <button id="pro1" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+        </form>
+        <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+          <input type="hidden" name="id_producto" value="1">
+          <button id="fav1" type="submit" class="btn-floating pulse" style="background-color: #FF4081;">
+              <i class="material-icons">favorite</i>
+          </button>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-image">
+        <img src="Ima/5.png">
+        <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">20% de descuento</span>
+      </div>
+      <div class="card-content">
+        <p>Nombre: Camiseta de la Selección Española 2024</p>
+        <p>Precio: $59.999</p>
+        <p>Equipo: España</p>
+      </div>
+      <div class="card-action">
+        <form method="POST" action="/carrito/agregar">
+          <input type="hidden" name="id_producto" value="2">
+          <p>Seleccione la cantidad:</p>
+          <input type="number" name="cantidad" min="1" required>
+          <button id="pro2" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+        </form>
+        <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+          <input type="hidden" name="id_producto" value="2">
+          <button id="fav2" type="submit" class="btn-floating pulse" style="background-color: #FF4081;">
+              <i class="material-icons">favorite</i>
+          </button>
+      </form>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-image">
+        <img src="Ima/3.png">
+        <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">80% de descuento</span>
+      </div>
+      <div class="card-content">
+        <p>Nombre: Camiseta de la Selección Brasileña 2024</p>
+        <p>Precio: $49.999</p>
+        <p>Equipo: Brasil</p>
+      </div>
+      <div class="card-action">
+        <form method="POST" action="/carrito/agregar">
+          <input type="hidden" name="id_producto" value="3">
+          <p>Seleccione la cantidad:</p>
+          <input type="number" name="cantidad" min="1" required>
+          <button id="pro3" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+        </form>
+        <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+          <input type="hidden" name="id_producto" value="3">
+          <button id="fav3" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+              <i class="material-icons">favorite</i>
+          </button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fila 2 -->
+<div class="row">
+  <!-- Producto 4 -->
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-image">
+        <img src="Ima/bayer.png">
+        <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">50% de descuento</span>
+      </div>
+      <div class="card-content">
+        <p>Nombre: Camiseta del Bayern Munich 2024</p>
+        <p>Precio: $54.999</p>
+        <p>Equipo: Bayern Munich</p>
+      </div>
+      <div class="card-action">
+        <form method="POST" action="/carrito/agregar">
+          <input type="hidden" name="id_producto" value="4">
+          <p>Seleccione la cantidad:</p>
+          <input type="number" name="cantidad" min="1" required>
+          <button id="pro4" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+        </form>
+        <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+          <input type="hidden" name="id_producto" value="4">
+          <button id="fav4" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+              <i class="material-icons">favorite</i>
+          </button>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 5 -->
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-image">
+        <img src="Ima/4.png">
+        <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">45% de descuento</span>
+      </div>
+      <div class="card-content">
+        <p>Nombre: Tercera equipación de Brasil 2024</p>
+        <p>Precio: $39.999</p>
+        <p>Equipo: Brasil</p>
+      </div>
+      <div class="card-action">
+        <form method="POST" action="/carrito/agregar">
+          <input type="hidden" name="id_producto" value="5">
+          <p>Seleccione la cantidad:</p>
+          <input type="number" name="cantidad" min="1" required>
+          <button id="pro5" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+        </form>
+        <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+          <input type="hidden" name="id_producto" value="5">
+          <button type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+              <i id="fav5" class="material-icons">favorite</i>
+          </button>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 6 -->
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-image">
+        <img style="height: 384px;" src="Ima/psg.png">
+        <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">10% de descuento</span>
+      </div>
+      <div class="card-content">
+        <p>Nombre: Camiseta del Paris Saint-Germain (PSG) 2024</p>
+        <p>Precio: $49.999</p>
+        <p>Equipo: PSG</p>
+      </div>
+      <div class="card-action">
+        <form method="POST" action="/carrito/agregar">
+          <input type="hidden" name="id_producto" value="6">
+          <p>Seleccione la cantidad:</p>
+          <input type="number" name="cantidad" min="1" required>
+          <button id="pro6" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+        </form>
+        <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+          <input type="hidden" name="id_producto" value="6">
+          <button id="fav6" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+              <i class="material-icons">favorite</i>
+          </button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
+    
+<img style="width: 80%;margin-left:9%"src="Ima/equipos.png"/>
+<br>
+<br>
+<br>
+<br>
+<img  style="width: 80%; margin-left: 10%"src="Ima/lol.png" alt="alt"/>
+<br><!-- <br> -->
+<br>
+<br>
+      
+      <div style="font-size: 4pc;color: #17202A ;text-align: center; ">Descuentos que no te puedes perder</div>
+      <br>
+
+       <!-- Producto 7 -->
+       <div class="row">
+        <!-- Fila 1 -->
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="Ima/psg.png">
+              <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">40% de descuento</span>
+            </div>
+            <div class="card-content">
+              <p>Nombre: Camiseta normal de los Phoenix Suns</p>
+              <p>Precio: $29.999</p>
+              <p>Equipo: Phoenix Suns</p>
+            </div>
+            <div class="card-action">
+              <form method="POST" action="/carrito/agregar">
+                <input type="hidden" name="id_producto" value="7">
+                <p>Seleccione la cantidad:</p>
+                <input type="number" name="cantidad" min="1" required>
+                <button id="pro7" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+              </form>
+              <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+                <input type="hidden" name="id_producto" value="7">
+                <button id="fav7" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="Ima/basque6.png">
+              <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">30% de descuento</span>
+            </div>
+            <div class="card-content">
+              <p>Nombre: Camiseta de los Chicago Bulls</p>
+              <p>Precio: $19.999</p>
+              <p>Equipo: Chicago Bulls</p>
+            </div>
+            <div class="card-action">
+              <form method="POST" action="/carrito/agregar">
+                <input type="hidden" name="id_producto" value="8">
+                <p>Seleccione la cantidad:</p>
+                <input type="number" name="cantidad" min="1" required>
+                <button id="pro8" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+              </form>
+              <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+                <input type="hidden" name="id_producto" value="8">
+                <button id="fav8" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image" style="height: 400px;">
+              <img src="Ima/basque4.png" style="height: 100%; object-fit: cover;">
+              <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">50% de descuento</span>
+            </div>
+            <div class="card-content">
+              <p>Nombre: Camiseta negra de los Dallas Mavericks</p>
+              <p>Precio: $24.999</p>
+              <p>Equipo: Dallas Mavericks</p>
+            </div>
+            <div class="card-action">
+              <form method="POST" action="/carrito/agregar">
+                <input type="hidden" name="id_producto" value="9">
+                <p>Seleccione la cantidad:</p>
+                <input type="number" name="cantidad" min="1" required>
+                <button id="pro9" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+              </form>
+              <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+                <input type="hidden" name="id_producto" value="9">
+                <button id="fav9" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <!-- Fila 2 -->
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image" style="height: 400px;">
+              <img src="Ima/basque5.png" style="height: 100%; object-fit: cover;">
+              <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">8% de descuento</span>
+            </div>
+            <div class="card-content">
+              <p>Nombre: Camiseta los Dallas Mavericks</p>
+              <p>Precio: $22.999</p>
+              <p>Equipo: Dallas Mavericks</p>
+            </div>
+            <div class="card-action">
+              <form method="POST" action="/carrito/agregar">
+                <input type="hidden" name="id_producto" value="10">
+                <p>Seleccione la cantidad:</p>
+                <input type="number" name="cantidad" min="1" required>
+                <button id="pro10" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+              </form>
+              <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+                <input type="hidden" name="id_producto" value="10">
+                <button id="fav10" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image" style="height: 400px;">
+              <img src="Ima/basque9.png" style="height: 100%; object-fit: cover;">
+              <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">99% de descuento</span>
+            </div>
+            <div class="card-content">
+              <p>Nombre: Camiseta negra de los Bruklyn Nets</p>
+              <p>Precio: $29.999</p>
+              <p>Equipo: Bruklyn Nets</p>
+            </div>
+            <div class="card-action">
+              <form method="POST" action="/carrito/agregar">
+                <input type="hidden" name="id_producto" value="11">
+                <p>Seleccione la cantidad:</p>
+                <input type="number" name="cantidad" min="1" required>
+                <button id="pro11" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+              </form>
+              <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+                <input type="hidden" name="id_producto" value="11">
+                <button  id="fav11" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image" style="height: 400px;">
+              <img src="Ima/basque7.png" style="height: 100%; object-fit: cover;">
+              <span class="card-title" style="background: linear-gradient(to bottom, #17202A, #34495E); color: #ffffff;">60% de descuento</span>
+            </div>
+            <div class="card-content">
+              <p>Nombre: Camiseta de baloncesto del Celtic 2024</p>
+              <p>Precio: $27.999</p>
+              <p>Equipo: Celtic</p>
+            </div>
+            <div class="card-action">
+              <form method="POST" action="/carrito/agregar">
+                <input type="hidden" name="id_producto" value="12">
+                <p>Seleccione la cantidad:</p>
+                <input type="number" name="cantidad" min="1" required>
+                <button id="pro12" type="submit" style="background-color: #17202A; color: #ffffff; width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">AÑADIR AL CARRITO</button>
+              </form>
+              <form method="POST" action="/favoritos/toggle" style="margin-top: 10px;">
+                <input type="hidden" name="id_producto" value="12">
+                <button id="fav12" type="submit" class="btn-floating pulse"  style="background-color: #FF4081;">
+                    <i class="material-icons">favorite</i>
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br><!-- para las paginas esto realiza el cambio de pagina si tuvieramos mas xd -->
+<ul  style="text-align: center"class="pagination">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="active"><a href="#!">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+
+
+<!-- final ofertas -->
+<!-- FOOTEER -->
+
+<footer class="page-footer" style="background: linear-gradient(to bottom, #17202A, #34495E)">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 s12">
+                <h5 class="white-text">Derechos del comprador</h5>
+                <p class="grey-text text-lighten-4">Derecho a la información completa y precisa sobre productos y precios.</p>
+                <p class="grey-text text-lighten-4">Garantía de calidad en todos nuestros productos deportivos.</p>
+                <p class="grey-text text-lighten-4">Seguridad en la compra de artículos que cumplen normativas de seguridad.</p>
+                <p class="grey-text text-lighten-4">Soporte y atención al cliente amable y profesional en todo momento.</p>
+                
+               
+              </div>
+              <div class="col l4 offset-l0 s10">
+                <h5 class="white-text">Te ayudamos</h5>
+                <ul><br>
+                  <li><a class="grey-text text-lighten-3" href="#!">Venta telefónica 600 390 6500</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contáctanos</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Devoluciones y cambios</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Estado del pedido</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Concursos y bases legales</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Cómo cuidamos tus datos</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Consulta tu Gift Card</a></li>
+                   <li><a class="grey-text text-lighten-3" href="#!">Canal de integridad - Integrity Channel</a></li>
+                </ul>
+              </div>
+                <div class="col l4 offset-l0 s10">
+                <h5 class="white-text">Sé parte de Nuestra tienda</h5>
+                <ul><br>
+                  <li><a class="grey-text text-lighten-3" href="#!">Venta empresa</a></li>
+                  
+                  <li><a class="grey-text text-lighten-3" href="#!">Nuestros inversionistas</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Cyberday</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Black Friday</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Cyber Monday</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Trabaja en Grupo Falabella</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.falabella.com">Vende en nuestra tienda</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+                <a> © 2024   © TODOS LOS DERECHOS RESERVADOS</a>
+                <a class="grey-text text-lighten-4 right" href="#!">Politica de Cookies</a>
+              <div>
+                    Falabella.com SPA. Av. Presidente Riesco N°5.685, oficina 401, Santiago de Chile
+            <a class="grey-text text-lighten-4 right" href="#!">Terminos y condiciones</a></div>
+                
+            </div>
+          </div>
+        </footer>
+<!-- FINAL FOOTEER -->
+</body>
+
+  <!-- INICIALIZACION --> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, null);
+      
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems, null);
+       setInterval(function() {
+    var instance = M.Carousel.getInstance(elems[0]); // Obtiene la instancia del carrusel
+    instance.next(); // Mueve el carrusel al siguiente elemento
+  }, 5000); // le da el tiempo 3 segundos
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+ 
+  var k1 = document.getElementById('1');
+  var k2 = document.getElementById('2');
+  var instances1 = M.Carousel.init(k1);
+  var instances1 = M.Carousel.init(k2);
+  setInterval(function() {
+    var instance = M.Carousel.getInstance(k1); // 
+    instance.next(); 
+  }, 3000); 
+    setInterval(function() {
+    var instance = M.Carousel.getInstance(k2); // 
+    instance.next(); 
+  }, 3000); 
+});   
+  </script>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const forms = document.querySelectorAll('form');
+  
+      forms.forEach(form => {
+        form.addEventListener('submit', function(event) {
+          const cantidadInput = form.querySelector('input[name="cantidad"]');
+          const cantidad = Number(cantidadInput.value);
+  
+          if (!Number.isInteger(cantidad) || cantidad <= 0) {
+            event.preventDefault();
+            alert('Por favor, ingrese una cantidad válida mayor a 0.');
+          }
+        });
+      });
+    });
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.carousel.carousel-slider').carousel({
+          fullWidth: true,
+          indicators: true
+        });
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems);
+  });
+    </script>
+
+<!-- FINAL FOOTEER -->
+  
+<!--BOTONICOS si podia ser onclick me entere tarde profe la media vola-->
+<script>
+const boton = document.getElementById("pro1");
+
+
+boton.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+
+const boton1 = document.getElementById("pro2");
+
+
+boton1.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton2 = document.getElementById("pro3");
+
+
+boton2.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton3 = document.getElementById("pro4");
+
+
+boton3.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton4 = document.getElementById("pro5");
+
+
+boton4.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton5 = document.getElementById("pro6");
+
+
+boton5.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+
+  const boton6 = document.getElementById("pro7");
+
+
+boton6.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton7 = document.getElementById("pro8");
+
+
+boton7.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton8 = document.getElementById("pro9");
+
+
+boton8.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton10 = document.getElementById("pro10");
+
+
+boton10.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton11 = document.getElementById("pro11");
+
+
+boton11.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+  const boton12 = document.getElementById("pro12");
+
+
+boton12.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto al carrito!");
+  
+  });
+
+// FAVORITOS
+const fav = document.getElementById("fav1");
+
+
+fav.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav1 = document.getElementById("fav2");
+
+
+fav1.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav2 = document.getElementById("fav3");
+
+
+fav2.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav3 = document.getElementById("fav4");
+
+
+fav3.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav4 = document.getElementById("fav5");
+
+
+fav4.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav5 = document.getElementById("fav6");
+
+
+fav5.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav6 = document.getElementById("fav7");
+
+
+fav6.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav7 = document.getElementById("fav8");
+
+
+fav7.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav8 = document.getElementById("fav9");
+
+
+fav8.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav9 = document.getElementById("fav1");
+
+
+fav9.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav10 = document.getElementById("fav10");
+
+
+fav10.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav11 = document.getElementById("fav11");
+
+
+fav11.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+const fav12 = document.getElementById("fav12");
+
+
+fav12.addEventListener("click", () => {
+  Swal.fire("Se a añadido el producto a favoritos!");
+});
+</script>
+</body>
+</html>
+    
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+
+    <link rel="stylesheet" href="css/Css.css">
+
+    <title>Cambiar Contraseña</title>
+   
+    <link rel="stylesheet" href="/css/Css.css">
+</head>
+<body class="bodyInicio">
+    <div class="formularioLogin">
+        <h1>ENVIAR CORREO</h1>
+        <form id="loginForm" method="post" action="/enviarcorreo">
+            <div class="usuario">
+                <input type="email" id="tonto" name="tonto" required>
+                <label for="username">ingrese correo</label>
+            </div>
+            <input class="btn" onclick="alerta()" type="submit" value="ENVIAR CORREO">
+            <div id="message"></div>
+            <div class="registrarme">
+                 <a href="inicio"  style="color: #ffffff; font-size: 22px">volver</a>
+                <br>
+            </div>
+        </form>
+    </div>
+
+<script>
+     function alerta (){
+        Swal.fire("Se a enviado el correo!");
+
+    }
+
+</script>
+<script>
+    // Inicialización de Materialize
+    document.addEventListener('DOMContentLoaded', function () {
+        M.AutoInit();
+    });
+
+    // Función para guardar el correo en localStorage
+    function guardarCorreo() {
+        var correo = document.getElementById('tonto').value;
+        localStorage.setItem('correoIngresado', correo);
+        console.log(correo);
+    }
+</script>
+   
+
+</body>
+</html>

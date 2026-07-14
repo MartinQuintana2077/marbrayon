@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="css/Css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Restablecer Contraseña</title>
+</head>    
+
+   
+   
+
+<body class="bodyInicio">
+    <div class="formularioLogin">
+        <h1>CAMBIAR CONTRASEÑA</h1>
+        <form method="post" action="/cambiarpass">
+            <div>
+            <label style="color: aliceblue;font-size:18px;" for="campo1">Nueva Contraseña:</label>
+            <input style="color: aliceblue;" type="password" id="campo1" name="campo1" oninput="validarCampos()">
+        </div>
+        <div>
+            <label  style="color: aliceblue;font-size:18px;" for="campo2">Repita Contraseña:</label>
+            <input style="color: aliceblue;"  type="password" id="campo2" name="campo2" oninput="validarCampos()">
+        </div >
+            <div class="center">
+            <button style="margin-right:5%;" class="waves-effect waves-light btn" type="submit" id="boton" disabled>Enviar</button>
+        </div>
+        </form>
+       
+    </div>
+
+
+
+
+
+    <script>
+        function validarCampos() {
+            var campo1 = document.getElementById("campo1").value;
+            var campo2 = document.getElementById("campo2").value;
+            var boton = document.getElementById("boton");
+
+            if (campo1 === campo2 && campo1 !== "" && campo2 !== "") {
+                boton.disabled = false;
+            } else {
+                boton.disabled = true;
+            }
+        }
+    </script>
+    <script>
+        function borrarLocal () {
+          localStorage.removeItem("correoIngresado")
+        
+        }
+        
+        </script>
+        <script>
+          // Función para insertar el valor del localStorage en el input
+          function insertarLocalStorageEnInput() {
+              // Obtener el valor del localStorage
+              var rescateUsuario = localStorage.getItem('correoIngresado');
+        
+              // Seleccionar el input
+              var inputCorreo = document.getElementById('CorreoRecuperado');
+        
+              // Asignar el valor del localStorage al input
+              if (rescateUsuario) {
+                  inputCorreo.value = rescateUsuario;
+                  M.updateTextFields();  // Actualizar el estado de los campos en Materialize
+              } else {
+                  inputCorreo.value = ""; // Opcional: puedes dejar el input vacío si no hay datos en localStorage
+              }
+          }
+        
+          // Llamar a la función cuando el DOM esté completamente cargado
+          document.addEventListener('DOMContentLoaded', insertarLocalStorageEnInput);
+        </script>
+        <script>
+          // Función para insertar el valor del localStorage en el input
+          function insertarLocalStorageEnInput1() {
+              // Obtener el valor del localStorage
+              var rescateUsuario = localStorage.getItem('correoIngresado');
+        
+              // Seleccionar el input
+              var inputCorreo = document.getElementById('CorreoRecuperado1');
+        
+              // Asignar el valor del localStorage al input
+              if (rescateUsuario) {
+                  inputCorreo.value = rescateUsuario;
+                  M.updateTextFields();  // Actualizar el estado de los campos en Materialize
+              } else {
+                  inputCorreo.value = ""; // Opcional: puedes dejar el input vacío si no hay datos en localStorage
+              }
+          }
+        
+          // Llamar a la función cuando el DOM esté completamente cargado
+          document.addEventListener('DOMContentLoaded', insertarLocalStorageEnInput1);
+        </script>
+   
+
+</body>
+
+</html>

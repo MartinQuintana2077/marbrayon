@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Css.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Editar Usuario</title>
+</head>
+<body class="bodyRegistro">
+    <div style="background-color: #ffffff;">
+        <h1 >Editar Usuario</h1>
+        <form action="/actualizarUsu" method="post">
+            <input type="hidden" name="id_usuario" value="<%= usuario.id_usuario %>">
+            <div class="input-field">
+                <input type="text" id="nombre_usuario" name="nombre_usuario" value="<%= usuario.nombre_usuario %>">
+                <label for="nombre_usuario" class="active">Nombre del Usuario</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="pass_usuario" name="pass_usuario" value="<%= usuario.pass_usuario %>">
+                <label for="pass_usuario" class="active">Contraseña</label>
+            </div>
+            <div class="input-field">
+                <input type="email" id="email_usuario" name="email_usuario" value="<%= usuario.email_usuario %>">
+                <label for="email_usuario" class="active">Email del Usuario</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="telefono_usuario" name="telefono_usuario" value="<%= usuario.telefono_usuario %>">
+                <label for="telefono_usuario" class="active">Teléfono del Usuario</label>
+            </div>
+            <div class="input-field">
+                <select id="rol_usuario" name="rol_usuario">
+                    <option value="cliente" <%= usuario.rol === 'cliente' ? 'selected' : '' %>>Cliente</option>
+                    <option value="admin" <%= usuario.rol === 'admin' ? 'selected' : '' %>>Admin</option>
+                </select>
+                <label for="rol_usuario" class="active">Rol del Usuario</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Guardar Cambios</button>
+        </form>
+    </div>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+</script>
+</body>
+</html>

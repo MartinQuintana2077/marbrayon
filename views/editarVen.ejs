@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Css.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Editar Venta</title>
+</head>
+<body class="bodyRegistro">
+    <div style="background-color: #ffffff;">
+        <h1>Editar Venta</h1>
+        <form action="/actualizarVen" method="post">
+            <input type="hidden" name="id_venta" value="<%= venta.id_venta %>">
+            <div class="input-field">
+                <input type="number" id="id_producto" name="id_producto" value="<%= venta.id_producto %>">
+                <label for="id_producto" class="active">ID Producto</label>
+            </div>
+            <div class="input-field">
+                <input type="number" id="id_cliente" name="id_cliente" value="<%= venta.id_usuario %>">
+                <label for="id_cliente" class="active">ID Cliente</label>
+            </div>
+            <div class="input-field">
+                <input type="number" id="cantidad" name="cantidad" value="<%= venta.cantidad %>">
+                <label for="cantidad" class="active">Cantidad</label>
+            </div>
+            <div class="input-field">
+                <input type="datetime-local" id="fecha" name="fecha" value="<%= new Date(venta.fecha).toISOString().slice(0, 16) %>">
+                <label for="fecha" class="active">Fecha</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Guardar Cambios</button>
+        </form>
+    </div>  
+</body>
+</html>

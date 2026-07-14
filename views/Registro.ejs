@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Marbrayon.com</title>
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/Css.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+    </head>
+    <body class="bodyRegistro">
+
+
+        
+        <div class="formularioRegistro">
+            <h1>REGISTRO DE USUARIO</h1>
+            <form id="registerForm" method="post" action="/crear">
+                <div class="reg">
+                    <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+                    <label for="nombre_usuario">Nombre de Usuario</label>
+                </div>
+                <div class="reg">
+                    <input type="password" id="pass_usuario" name="pass_usuario" required>
+                    <label for="pass_usuario">Contraseña</label>
+                </div>
+                <div class="reg">
+                    <input type="email" id="email_usuario" name="email_usuario" required>
+                    <label for="email_usuario">Correo Electrónico</label>
+                </div>
+                <div class="reg">
+                    <input type="tel" id="telefono" name="telefono" required>
+                    <label for="telefono">Telefono</label>
+                </div>
+                
+                <input type="submit" value="Registrarse">
+                <div id="message"></div>
+                <div class="iniciar-sesion">
+                    ¿Ya tienes una cuenta? 
+                    <a href="inicio" style="color: #ffffff; font-size: 22px">Inicia sesión aquí</a>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,1 @@
+let correo = document.getElementById("correo").value;

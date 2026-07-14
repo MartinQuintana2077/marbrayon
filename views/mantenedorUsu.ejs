@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Css.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Lista de Usuarios</title>
+</head>
+<body style="background-color:#bbdefb">
+    <nav>
+        <div class="nav-wrapper" style="background: #17202A;">
+            <a href="#" class="brand-logo center" style="color: #ffffff;">
+                <img style="border-radius:60px" src="Ima/logochico.jpg" width="150" height="65" alt="logochico"/>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/logout">Cerrar sesión</a></li>
+                <li><a href="inicio">Cambiar usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="background-color: #ffffff;">
+        <h1  style="background-color:#bbdefb ;">Lista de Usuarios</h1>
+        <table class="responsive-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (usuarios && usuarios.length > 0) { %>
+                    <% usuarios.forEach(function(usuario) { %>
+                        <tr>
+                            <td><%= usuario.id_usuario %></td>
+                            <td><%= usuario.nombre_usuario %></td>
+                            <td><%= usuario.email_usuario %></td>
+                            <td><%= usuario.telefono_usuario %></td>
+                            <td><%= usuario.rol %></td>
+                            <td>
+                                <form action="/editarUsu/<%= usuario.id_usuario %>" method="get" style="display: inline;">
+                                    <button class="waves-effect waves-light btn blue" type="submit">Editar <i class="material-icons right">edit</i></button>
+                                </form>
+                                <form action="/borrarUsuario" method="post" style="display: inline;">
+                                    <input type="hidden" name="id_usuario" value="<%= usuario.id_usuario %>">
+                                    <button class="waves-effect waves-light btn red" type="submit">Borrar <i class="material-icons right">delete</i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="6">No hay usuarios disponibles</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <h1 style="background-color:#bbdefb ;">Registro de Usuario</h1>
+        <form id="registerForm" method="post" action="/crearUsu">
+            <div class="input-field">
+                <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+                <label for="nombre_usuario">Nombre del Usuario</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="pass_usuario" name="pass_usuario" required>
+                <label for="pass_usuario">Contraseña</label>
+            </div>
+            <div class="input-field">
+                <input type="email" id="email_usuario" name="email_usuario" required>
+                <label for="email_usuario">Email del Usuario</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="telefono_usuario" name="telefono_usuario" required>
+                <label for="telefono_usuario">Teléfono del Usuario</label>
+            </div>
+            <div class="input-field">
+                <select id="rol_usuario" name="rol_usuario" required>
+                    <option value="" disabled selected>Seleccione un Rol</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <label for="rol_usuario">Rol del Usuario</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Registrar Usuario</button>
+        </form>
+        <div style="position: absolute;z-index:2; margin-top:-2%;margin-left:40%;" class="iniciar-sesion2">
+            ¿Quieres volver? 
+            <a href="admin" style="color: black; font-size: 22px;color: blue;">Vuelve</a>
+        </div>
+    </div>
+   <!-- FOOTEER -->
+    <footer class="page-footer" style="background: linear-gradient(to bottom, #17202A, #34495E)">
+        <div class="container">
+          <div class="row">
+            <div class="col l4 s12">
+              <h5 class="white-text">Derechos del comprador</h5>
+              <p class="grey-text text-lighten-4">Derecho a la información completa y precisa sobre productos y precios.</p>
+              <p class="grey-text text-lighten-4">Garantía de calidad en todos nuestros productos deportivos.</p>
+              <p class="grey-text text-lighten-4">Seguridad en la compra de artículos que cumplen normativas de seguridad.</p>
+              <p class="grey-text text-lighten-4">Soporte y atención al cliente amable y profesional en todo momento.</p>
+            </div>
+            <div class="col l4 offset-l0 s10">
+              <h5 class="white-text">Te ayudamos</h5>
+              <ul><br>
+                <li><a class="grey-text text-lighten-3" href="#!">Venta telefónica 600 390 6500</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Contáctanos</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Devoluciones y cambios</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Estado del pedido</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Protocolo de seguridad</a></li>
+              </ul>
+            </div>
+            <div class="col l4 offset-l0 s10">
+              <h5 class="white-text">Sé parte de Nuestra tienda</h5>
+              <ul><br>
+                <li><a class="grey-text text-lighten-3" href="#!">Venta empresa</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Nuestros inversionistas</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Cyberday</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Black Friday</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Cyber Monday</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://www.falabella.com">Vende en nuestra tienda</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+              <a> © 2024   © TODOS LOS DERECHOS RESERVADOS</a>
+              <a class="grey-text text-lighten-4 right" href="#!">Politica de Cookies</a>
+            <div>
+                  Falabella.com SPA. Av. Presidente Riesco N°5.685, oficina 401, Santiago de Chile
+          <a class="grey-text text-lighten-4 right" href="#!">Terminos y condiciones</a></div>
+          </div>
+        </div>
+      </footer>
+    <!-- FINAL FOOTEER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+</body>
+</html>

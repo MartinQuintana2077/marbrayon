@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Css.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Editar Producto</title>
+</head>
+<body  class="bodyRegistro">
+    <div style="background-color: #ffffff;">
+    <h1 style="background-color:#bbdefb ;">Editar Producto</h1>
+    <form action="/actualizarProd" method="post">
+        <input type="hidden" name="id_producto" value="<%= producto.id_producto %>">
+        <label for="nombre_producto">Nombre:</label>
+        <input type="text" id="nombre_producto" name="nombre_producto" value="<%= producto.nombre_producto %>"><br>
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" value="<%= producto.precio %>"><br>
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" value="<%= producto.stock %>"><br>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion"><%= producto.descripcion %></textarea><br>
+        <label for="equipo">Equipo:</label>
+        <input type="text" id="equipo" name="equipo" value="<%= producto.equipo %>"><br>
+        <button class="btn waves-effect waves-light"  type="submit">Guardar Cambios</button>
+    </form>
+</div>
+
+<footer class="page-footer" style="background: linear-gradient(to bottom, #17202A, #34495E)">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+          <h5 class="white-text">Derechos del comprador</h5>
+          <p class="grey-text text-lighten-4">Derecho a la información completa y precisa sobre productos y precios.</p>
+          <p class="grey-text text-lighten-4">Garantía de calidad en todos nuestros productos deportivos.</p>
+          <p class="grey-text text-lighten-4">Seguridad en la compra de artículos que cumplen normativas de seguridad.</p>
+          <p class="grey-text text-lighten-4">Soporte y atención al cliente amable y profesional en todo momento.</p>
+          
+         
+        </div>
+        <div class="col l4 offset-l0 s10">
+          <h5 class="white-text">Te ayudamos</h5>
+          <ul><br>
+            <li><a class="grey-text text-lighten-3" href="#!">Venta telefónica 600 390 6500</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Contáctanos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Devoluciones y cambios</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Estado del pedido</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Concursos y bases legales</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Cómo cuidamos tus datos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Consulta tu Gift Card</a></li>
+             <li><a class="grey-text text-lighten-3" href="#!">Canal de integridad - Integrity Channel</a></li>
+          </ul>
+        </div>
+          <div class="col l4 offset-l0 s10">
+          <h5 class="white-text">Sé parte de Nuestra tienda</h5>
+          <ul><br>
+            <li><a class="grey-text text-lighten-3" href="#!">Venta empresa</a></li>
+            
+            <li><a class="grey-text text-lighten-3" href="#!">Nuestros inversionistas</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Cyberday</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Black Friday</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Cyber Monday</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Trabaja en Grupo Falabella</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.falabella.com">Vende en nuestra tienda</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+          <a> © 2024   © TODOS LOS DERECHOS RESERVADOS</a>
+          <a class="grey-text text-lighten-4 right" href="#!">Politica de Cookies</a>
+        <div>
+              Falabella.com SPA. Av. Presidente Riesco N°5.685, oficina 401, Santiago de Chile
+      <a class="grey-text text-lighten-4 right" href="#!">Terminos y condiciones</a></div>
+          
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

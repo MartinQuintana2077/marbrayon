@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marbrayon.com - Mis Compras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import materialize.css -->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/Css.css">
+</head>
+<body class="bodyCarrito">
+    <div class="carrito1">
+        <h1>Mis Compras</h1>
+        <table class="responsive-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% ventas.forEach(venta => { %>
+                    <tr>
+                        <td><%= venta.nombre_producto %></td>
+                        <td><%= venta.cantidad %></td>
+                        <td><%= new Date(venta.fecha).toLocaleDateString() %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/index" class="btn">Volver al Inicio</a>
+    </div>
+</body>
+</html>
+

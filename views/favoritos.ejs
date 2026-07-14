@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marbrayon.com - Mis Favoritos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import materialize.css -->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/Css.css">
+</head>
+<body class="bodyCarrito">
+    <div class="carrito1">
+        <h1>Mis Favoritos</h1>
+        <table class="responsive-table">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                    <th>Equipo</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% favoritos.forEach(producto => { %>
+                    <tr>
+                        <td><%= producto.nombre_producto %></td>
+                        <td>$<%= producto.precio %></td>
+                        <td><%= producto.equipo %></td>
+                        <td>
+                            <form method="POST" action="/favoritos/eliminar">
+                                <input type="hidden" name="id_producto" value="<%= producto.id_producto %>">
+                                <button type="submit" class="btn-floating pulse">
+                                    <i  style="background: linear-gradient(to bottom, #17202A, #34495E);" class="material-icons">favorite_border
+                                    </i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/index" class="btn">Volver al Inicio</a>
+    </div>
+</body>
+</html>
+
+
